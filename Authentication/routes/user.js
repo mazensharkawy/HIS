@@ -1,10 +1,10 @@
-import Router from 'express'
 import bcrypt from 'bcrypt'
-
+import Router from 'express'
 import Database from '../db'
-import checkUser from '../middleware/checkUser'
-
 import tokenMiddleWare from '../middleware/token'
+import checkUser from '../middlewares/checkUser'
+
+
 
 const router = Router()
 

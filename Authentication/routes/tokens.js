@@ -1,11 +1,11 @@
-import { Router } from 'express'
 import bcrypt from 'bcrypt'
+import { Router } from 'express'
 import jwt from 'jsonwebtoken'
-
-import keys from '../keys'
-import checkUser from '../middleware/checkUser'
-import token from '../middleware/token'
 import Database from '../db'
+import keys from '../keys'
+import checkUser from '../middlewares/checkUser'
+import token from '../middlewares/token'
+
 
 const router = Router()
 

@@ -1,9 +1,8 @@
-import "@babel/polyfill";
 import bodyParser from 'body-parser';
 import express from 'express';
 import helmet from 'helmet';
 import xss from 'xss-clean';
-import tokenMiddleWare from './middleware/token';
+import tokenMiddleWare from './middlewares/token';
 import tokens from './routes/tokens';
 import user from './routes/user';
 
