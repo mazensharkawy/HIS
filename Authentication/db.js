@@ -4,18 +4,17 @@ import { MongoClient } from "mongodb";
 import config from "./config";
 
 let production = false; //process.env.NODE_ENV === 'production';
-const key = production ? config.database.prod : config.database.test;
-const dbName = production ? "blloc" : "blloc-staging";
+const key = config.database;
+// const dbName = production ? "blloc" : "blloc-staging";
+const dbName = "HIS";
 
 let db = null;
-let connect = cb => {
+let connect = (cb) => {
   console.log("Connecting to db");
   MongoClient.connect(
-    process.env.NODE_ENV !== "production"
-      ? config.database.test
-      : config.database.prod,
+    key,
     {
-      useNewUrlParser: true
+      useNewUrlParser: true,
     },
     (err, database) => {
       if (err) return console.log(err);
@@ -35,16 +34,13 @@ export default class Database {
   }
   static async openDb() {
     return MongoClient.connect(key, { useNewUrlParser: true }).then(
-      dbc => (db = dbc.db(dbName))
+      (dbc) => (db = dbc.db(dbName))
     );
   }
 
   static async read({ tableName, query }) {
     if (!db) await this.openDb();
-    return db
-      .collection(tableName)
-      .find(query)
-      .toArray();
+    return db.collection(tableName).find(query).toArray();
   }
 
   static async write({ tableName, object }) {
@@ -52,7 +48,7 @@ export default class Database {
     console.log("DB: " + db.dbName);
     console.log("Object to write: " + object);
 
-    return db.collection(tableName).insertOne(object, function(err) {
+    return db.collection(tableName).insertOne(object, function (err) {
       if (err) {
         console.log("ops !! an error inserting");
         console.log(err);

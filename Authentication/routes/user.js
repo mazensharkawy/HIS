@@ -44,7 +44,7 @@ async function createUser(req, res, next) {
   const user = {
     email,
     password: hash,
-    extraData
+    ...extraData
   }
 
   const doc = Database.write({ tableName: 'User', object: user })
