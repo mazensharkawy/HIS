@@ -1,6 +1,6 @@
 import Promise from "bluebird";
 import { MongoClient } from "mongodb";
-import config from "./config";
+import config from "../config";
 
 let production = false; //process.env.NODE_ENV === 'production';
 const key = config.database;

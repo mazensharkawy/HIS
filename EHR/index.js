@@ -3,7 +3,7 @@ import helmet from "helmet";
 import xss from "xss-clean";
 import EHRrouter from "./routes/EHR";
 import bodyParser from "body-parser";
-
+import clinicsRouter from './routes/clinics';
 global.dev_ENV = process.env.NODE_ENV !== "production";
 
 var app = express();
@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(helmet());
 
 app.use("/EHR", EHRrouter);
+app.use("/clinics",clinicsRouter)
 // 404 handling
 // =============================================================================
 app.use(function (req, res, next) {
