@@ -1,5 +1,5 @@
 import Router from "express";
-import Database from "../db";
+import Database from "../db/EHRdb";
 
 const router = Router();
 let tableName = "EHR";
