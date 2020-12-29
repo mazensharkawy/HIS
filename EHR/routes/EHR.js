@@ -1,5 +1,6 @@
 import Router from "express";
 import Database from "../db";
+import { verifyTokenMiddleware } from "../middlewares/token";
 
 const router = Router();
 let tableName = "EHR";
@@ -72,9 +73,9 @@ const addRecipient = async (req, res) => {
   else res.status(400).send({ inserted: false });
 };
 
-router.get("/getall", getAllEHR);
-router.post("/getbyid", getEHRByID);
-router.post("/getbyphone", getEHRByPhone);
+router.get("/getallEHR", getAllEHR);
+router.post("/getEHRbyid", getEHRByID);
+router.post("/getEHRbyphone", getEHRByPhone);
 
 router.post("/addrecipient", addRecipient);
 
