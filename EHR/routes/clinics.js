@@ -1,17 +1,11 @@
 import Router from "express";
-import { insert, openDb } from "../db/clinicsdb";
+import { insert } from "../db/clinicsdb";
+import { clinicValidation } from "../middlewares/dataValidation";
 const router = Router();
 
 const insertClinic = async (req, res) => {
-  const data = {
-    name: "ay7aga",
-    open: "date",
-    close: "date",
-    address: "address",
-  };
-  const table = "Clinic";
-
-  insert(table, data)
+  let data = req.body;
+  insert("Clinic", data)
     .then(() => {
       res.status(200).send();
     })
@@ -21,5 +15,5 @@ const insertClinic = async (req, res) => {
     });
 };
 
-router.get("/DDl", insertClinic);
+router.post("/insert", clinicValidation, insertClinic);
 export default router;
