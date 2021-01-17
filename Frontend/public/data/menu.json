@@ -1,0 +1,105 @@
+[{
+        "title": "Medicine",
+        "groupTitle": true
+    },
+    {
+        "title": "Dashboard",
+        "icon": {
+            "class": "icofont-thermometer-alt"
+        },
+        "routing": "default-dashboard"
+    },
+    {
+        "title": "Appointments",
+        "icon": {
+            "class": "icofont-stethoscope-alt"
+        },
+        "routing": "appointments"
+    },
+    {
+        "title": "Doctors",
+        "icon": {
+            "class": "icofont-doctor"
+        },
+        "routing": "doctors"
+    },
+    {
+        "title": "Departments",
+        "icon": {
+            "class": "icofont-nurse"
+        },
+        "routing": "departments"
+    },
+    {
+        "title": "Patients",
+        "icon": {
+            "class": "icofont-paralysis-disability"
+        },
+        "routing": "patients"
+    },
+    {
+        "title": "Payments",
+        "icon": {
+            "class": "icofont-pay"
+        },
+        "routing": "payments"
+    },
+
+    {
+        "title": "Apps",
+        "groupTitle": true
+    },
+    {
+        "title": "Service pages",
+        "sub": [{
+                "title": "Invoice",
+                "routing": "invoice"
+            },
+            {
+                "title": "Invoices",
+                "routing": "invoices"
+            },
+
+            {
+                "title": "Edit account",
+                "routing": "edit-account"
+            },
+            {
+                "title": "User profile",
+                "routing": "user-profile"
+            },
+            {
+                "title": "Events timeline",
+                "routing": "events-timeline"
+            },
+            {
+                "title": "Events calendar",
+                "routing": "events-calendar"
+            }
+        ]
+    },
+    {
+        "title": "Sessions",
+        "sub": [{
+                "title": "Sign in",
+                "routing": "sign-in",
+                "layout": "public"
+            },
+            {
+                "title": "Sign up",
+                "routing": "sign-up",
+                "layout": "public"
+            },
+            {
+                "title": "404",
+                "routing": "page-404",
+                "layout": "public"
+            },
+            {
+                "title": "500",
+                "routing": "page-500",
+                "layout": "public"
+            }
+        ]
+    }
+]
