@@ -31,5 +31,4 @@ const insertTiming = async (req, res) => {
 
 router.post("/insert-clinic", clinicValidation, insertClinic);
 router.post("/insert-timing", timingValidation, insertTiming);
-
 export default router;
