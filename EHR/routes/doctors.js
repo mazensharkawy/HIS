@@ -8,8 +8,13 @@ const getDoctors = async (req, res) => {
   let query = req.body || {};
   let tableName = "Doctors";
   let doctors = await read(tableName, query);
-  if (doctors) res.status(200).send({ doctors });
-  else res.status(400).send();
+  if (doctors) {
+    console.log({ doctors });
+    res.status(200).send({ doctors });
+  } else {
+    console.log("error ", { doctors });
+    res.status(400).send();
+  }
 };
 
 const getDepartments = (req, res) => {
