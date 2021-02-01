@@ -2,9 +2,7 @@ import express from "express";
 import helmet from "helmet";
 import xss from "xss-clean";
 import bodyParser from "body-parser";
-import EHRrouter from "./routes/EHR";
-import clinicsRouter from "./routes/clinics";
-import doctorsRouter from "./routes/doctors";
+import vitalsRouter from "./routes/vitals";
 global.dev_ENV = process.env.NODE_ENV !== "production";
 
 var app = express();
@@ -13,9 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(helmet());
 
-app.use("/EHR", EHRrouter);
-app.use("/clinics", clinicsRouter);
-app.use("/doctors", doctorsRouter);
+app.use("/vitals", vitalsRouter);
 // 404 handling
 // =============================================================================
 app.use(function (req, res, next) {
