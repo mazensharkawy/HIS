@@ -10,6 +10,6 @@ export function useGetUser(): IPatient {
     address: '71 Pilgrim Avenue Chevy Chase, MD 20815',
     status: 'approved',
     lastVisit: '18 Dec 2020',
-    img: `${window.origin}/content/user-400-1.jpg`
+    img: `${window.origin}/content/male.png`
   };
 }
