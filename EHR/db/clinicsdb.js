@@ -11,6 +11,7 @@ const createConnection = async () => {
       key,
       {
         useNewUrlParser: true,
+        useUnifiedTopology: true,
       },
       (err, database) => {
         if (err) reject(err);
@@ -24,7 +25,7 @@ const createConnection = async () => {
 
 export const read = async (table, query) => {
   if (!db) await createConnection();
-  return await db.collection(table).find(query).toArray();
+  return db.collection(table).find(query).toArray();
 };
 /**
  * return value => Promise
