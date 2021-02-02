@@ -21,6 +21,7 @@
     "mongodb": "^3.1.8",
     "mongoose": "^5.11.8",
     "numeral": "^2.0.6",
+    "path": "^0.12.7",
     "requestify": "^0.2.5",
     "xss-clean": "^0.1.1"
   },

@@ -6,7 +6,7 @@ const getVitals = async (req, res) => {
   let tableName = "Nursing";
   let query = req?.body || {};
   let result = await read(tableName, query);
-  if (result) res.status(200).send(result);
+  if (result) res.status(200).send({result});
   else res.status(400).send("failed to get vitals");
 };
 
