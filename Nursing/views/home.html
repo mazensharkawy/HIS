@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <!-- Page title -->
+    <title>vitals</title>
+    <!-- page description-->
+    <meta name="description" content="view and add patient vitals">
+
+     <!--bootstrap-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+    <center class="container fluid">
+        <div id="vitals" class="card-deck" style="padding: 3em;">
+
+        </div>
+        
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addVital">
+        Add Vital
+    </button>
+    </center>
+    <div class="modal fade" id="addVital"  role="dialog" aria-labelledby="addVital" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="ModalLabel">Add vital</h4>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form method="post" action="/vitals/add" data-code="vital">
+                  <div class="form-group">
+                    <label for="name" class="col-form-label">Vital Name</label>
+                    <input type="text" class="form-control" id="name" name="vitalName" placeholder="" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="value" class="col-form-label">Vital Value</label>
+                    <input type="text" class="form-control" id="value" name="vitalValue" placeholder="" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="patient class="col-form-label">Patient Room Number</label>
+                    <input type="text" class="form-control" id="patient" name="patient" placeholder="" required>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+                </form>
+              </div>
+              
+          </div>
+  
+    </div>
+    <script>
+        window.onload = ()=>{
+            const vitalsContainer = document.getElementById("vitals");
+            fetch('/vitals').then(res => {return res.json();
+            })
+            .then(result => {
+                console.log(result);
+                result.result.forEach(vital => {
+                    console.log(vital);
+                    let vitalDiv = document.createElement("div");
+                    vitalDiv.innerHTML = constructVitalDiv(vital);
+                    vitalsContainer.appendChild(vitalDiv);
+                });
+            }).catch( err => {
+                            console.log(err);
+                            })
+        }
+        const constructVitalDiv = (vital) => {
+            let props = {...vital.vitals};
+            let div = `
+            <div class='card mb-4 text-white shadow-lg bg-dark'>
+                <div class='card-body'>
+                <p class="card-text">ID:${vital._id}</p>
+                <p class="card-text">Patient ID: ${vital.patient}</p>
+                `;
+                for( const prop in props){
+                    div +=`<p class="card-text">${prop} : ${props[prop]}</p>
+                    `;
+                }
+                div += '</div></div>'
+            return div;
+        }
+    </script>
+</body>

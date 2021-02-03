@@ -1,0 +1,38 @@
+{
+  "name": "his-authentication-ms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec npx babel-node index.js",
+    "client": "cd client && yarn start",
+    "build": "babel server --out-dir compiled --copy-files"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.18.3",
+    "commander": "^2.19.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "helmet": "^3.14.0",
+    "jsonwebtoken": "^8.4.0",
+    "moment": "^2.22.2",
+    "mongodb": "^3.1.8",
+    "mongoose": "^5.11.8",
+    "numeral": "^2.0.6",
+    "path": "^0.12.7",
+    "requestify": "^0.2.5",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/cli": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "concurrently": "^4.0.1",
+    "npm": "^6.14.7"
+  },
+  "author": "",
+  "license": "ISC"
+}

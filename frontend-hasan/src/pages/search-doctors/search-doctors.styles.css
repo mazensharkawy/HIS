@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-size: 72px;
+  color: #275250;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(
+    to left,
+    rgb(212, 221, 247) 0%,
+    rgb(7, 219, 219) 100%
+  );
+}
