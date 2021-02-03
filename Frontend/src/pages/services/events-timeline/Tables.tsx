@@ -6,36 +6,36 @@ const lastClients = [
   {
     date: '23 May 2020',
     client: {
-      name: 'Liam',
-      img: '/content/user-40-1.jpg'
+      name: 'Lamis',
+      img: '/content/fem.png'
     }
   },
   {
     date: '22 May 2020',
     client: {
-      name: 'Emma',
-      img: '/content/user-40-2.jpg'
+      name: 'karim',
+      img: '/content/ma.png'
     }
   },
   {
     date: '21 May 2020',
     client: {
-      name: 'Olivia',
-      img: '/content/user-40-3.jpg'
+      name: 'Asmaa',
+      img: '/content/fem.png'
     }
   },
   {
     date: '20 May 2020',
     client: {
-      name: 'Ava',
-      img: '/content/user-40-4.jpg'
+      name: 'Aya',
+      img: '/content/fem.png'
     }
   },
   {
     date: '19 May 2020',
     client: {
-      name: 'Sam',
-      img: '/content/user-40-5.jpg'
+      name: 'Noah',
+      img: '/content/ma.png'
     }
   }
 ];

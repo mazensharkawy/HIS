@@ -25,19 +25,19 @@ const columns = [
 const data = [
   {
     key: '1',
-    name: 'John Brown',
+    name: 'Ali Hashem',
     money: '$30,000.00',
     address: 'New York No. 1 Lake Park'
   },
   {
     key: '2',
-    name: 'Jim Green',
+    name: 'Alaa Saad',
     money: '$1,256.00',
     address: 'London No. 1 Lake Park'
   },
   {
     key: '3',
-    name: 'Joe Black',
+    name: 'Hany Atta',
     money: '$12,000.00',
     address: 'Sidney No. 1 Lake Park'
   }

@@ -71,7 +71,7 @@ const columns = [
 const data = [
   {
     key: '1',
-    name: 'John Brown',
+    name: 'Ali Hashem',
     age: 32,
     tel: '0571-22098909',
     phone: 18889898989,
@@ -79,7 +79,7 @@ const data = [
   },
   {
     key: '2',
-    name: 'Jim Green',
+    name: 'Alaa Saad',
     tel: '0571-22098333',
     phone: 18889898888,
     age: 42,
@@ -87,7 +87,7 @@ const data = [
   },
   {
     key: '3',
-    name: 'Joe Black',
+    name: 'Hani Walid',
     age: 32,
     tel: '0575-22098909',
     phone: 18900010002,
@@ -95,19 +95,11 @@ const data = [
   },
   {
     key: '4',
-    name: 'Jim Red',
+    name: 'Samir Reda',
     age: 18,
     tel: '0575-22098909',
     phone: 18900010002,
     address: 'London No. 2 Lake Park'
-  },
-  {
-    key: '5',
-    name: 'Jake White',
-    age: 18,
-    tel: '0575-22098909',
-    phone: 18900010002,
-    address: 'Dublin No. 2 Lake Park'
   }
 ];
 

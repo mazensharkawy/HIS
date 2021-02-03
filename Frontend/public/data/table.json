@@ -1,26 +1,37 @@
-[
-	{
-    "number": 1,
-		"person": "Ronald Hilbert",
-		"position": "developer",
-		"email": "robhilbert@company.com"
-	},
-	{
-    "number": 2,
-		"person": "Angela Simpson",
-		"position": "digital artist",
-		"email": "hilbert@company.com"
-	},
-	{
-    "number": 3,
-		"person": "Richard Franson",
-		"position": "art director",
-		"email": "richard@company.com"
-	},
-	{
-    "number": 4,
-		"person": "David Robertson",
-		"position": "developer",
-		"email": "david@company.com"
-	}
+[{
+        "number": 1,
+        "person": "Mazen Sharkawy",
+        "position": "fullstack developer",
+        "email": "Mazen@company.com"
+    },
+    {
+        "number": 2,
+        "person": "Omar Elgamily",
+        "position": "backend developer",
+        "email": "Omar@company.com"
+    },
+    {
+        "number": 3,
+        "person": "Ahmed Ibrahim",
+        "position": "front-end developer",
+        "email": "ahmed@company.com"
+    },
+    {
+        "number": 4,
+        "person": "Mohamed Tarek",
+        "position": "backend developer",
+        "email": "Mohamed@company.com"
+    },
+    {
+        "number": 5,
+        "person": "Hassan Mohamed",
+        "position": "front-end developer",
+        "email": "Hassan@company.com"
+    },
+    {
+        "number": 6,
+        "person": "Ibrahim Khalaf",
+        "position": "developer",
+        "email": "ibrahim@company.com"
+    }
 ]

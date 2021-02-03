@@ -1,13 +1,13 @@
 {
     "mainInfo": {
         "img": "/content/male.png",
-        "firstName": "Liam",
-        "lastName": "Jouns",
+        "firstName": "Ali",
+        "lastName": "Akram",
         "position": "UI/UX Designer",
         "address": "71 Pilgrim Avenue Chevy Chase, MD 20815",
         "number": "0126596578",
-        "skype": "liam0jouns",
-        "slack": "@liam.jouns"
+        "skype": "ali0akram",
+        "slack": "@ali0akram"
     },
     "education": [{
         "sectionData": [{

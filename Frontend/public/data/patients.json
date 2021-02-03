@@ -1,8 +1,8 @@
 [{
         "img": "/content/ma.png",
         "profileImg": "/content/male.png",
-        "name": "Liam",
-        "fullName": "Liam Jouns",
+        "name": "Karim",
+        "fullName": "Karim Fouda",
         "id": "10021",
         "age": "42",
         "address": "71 Pilgrim Avenue Chevy Chase, MD 20815",
@@ -13,7 +13,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Emma",
+        "name": "Aya",
         "id": "10022",
         "age": "21",
         "address": "46 Pilgrim Avenue Chevy Chase, MD 20816",
@@ -24,7 +24,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Olivia",
+        "name": "Yassmin",
         "id": "10023",
         "age": "43",
         "address": "17 Pilgrim Avenue Chevy Chase, MD 20843",
@@ -35,7 +35,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Ava",
+        "name": "Sana",
         "id": "10024",
         "age": "21",
         "address": "53 Pilgrim Avenue Chevy Chase, MD 20843",
@@ -46,7 +46,7 @@
     },
     {
         "img": "/content/ma.png",
-        "name": "Noah",
+        "name": "Ibrahim",
         "id": "10025",
         "age": "22",
         "address": "44 Pilgrim Avenue Chevy Chase, MD 20815",
@@ -57,7 +57,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Isabella",
+        "name": "Asmaa",
         "id": "10026",
         "age": "35",
         "address": "75 Pilgrim Avenue Chevy Chase, MD 20815",
@@ -68,7 +68,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Sophia",
+        "name": "Mona",
         "id": "10027",
         "age": "54",
         "address": "40 Pilgrim Avenue Chevy Chase, MD 20854",
@@ -79,7 +79,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Mia",
+        "name": "Enas",
         "id": "10028",
         "age": "24",
         "address": "95 Pilgrim Avenue Chevy Chase, MD 20815",
@@ -90,7 +90,7 @@
     },
     {
         "img": "/content/ma.png",
-        "name": "William",
+        "name": "Mazen",
         "id": "10029",
         "age": "31",
         "address": "61 Pilgrim Avenue Chevy Chase, MD 20817",
@@ -101,7 +101,7 @@
     },
     {
         "img": "/content/ma.png",
-        "name": "James",
+        "name": "Omar",
         "id": "10030",
         "age": "19",
         "address": "53 Pilgrim Avenue Chevy Chase, MD 20886",
@@ -112,7 +112,7 @@
     },
     {
         "img": "/content/ma.png",
-        "name": "Logan",
+        "name": "Ahmed",
         "id": "10031",
         "age": "32",
         "address": "44 Pilgrim Avenue Chevy Chase, MD 20815",
@@ -123,7 +123,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Charlotte",
+        "name": "Mariem",
         "id": "10032",
         "age": "24",
         "address": "30 Pilgrim Avenue Chevy Chase, MD 20849",
@@ -134,7 +134,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Amelia",
+        "name": "Lamis",
         "id": "10033",
         "age": "38",
         "address": "20 Pilgrim Avenue Chevy Chase, MD 20815",
@@ -145,7 +145,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Evelyn",
+        "name": "Hania",
         "id": "10034",
         "age": "26",
         "address": "66 Pilgrim Avenue Chevy Chase, MD 20807",
@@ -156,7 +156,7 @@
     },
     {
         "img": "/content/ma.png",
-        "name": "Mason",
+        "name": "Berry",
         "id": "10035",
         "age": "30",
         "address": "69 Pilgrim Avenue Chevy Chase, MD 20838",
@@ -167,7 +167,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Emily",
+        "name": "Suzan",
         "id": "10036",
         "age": "20",
         "address": "20 Pilgrim Avenue Chevy Chase, MD 20875",
@@ -178,7 +178,7 @@
     },
     {
         "img": "/content/fem.png",
-        "name": "Elizabeth",
+        "name": "Nadia",
         "id": "10037",
         "age": "45",
         "address": "55 Pilgrim Avenue Chevy Chase, MD 20899",

@@ -25,7 +25,7 @@ const pageData: IPageData = {
       route: 'default-dashboard'
     },
     {
-      title: 'Liam Jouns'
+      title: 'Khaled Younes'
     }
   ]
 };

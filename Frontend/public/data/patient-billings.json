@@ -1,72 +1,111 @@
-[
-  {
-    "billNo": "132",
-    "billDate": "18 Feb 2019",
-    "patient": "Priya Patel",
-    "doctor": "Juan Freeman",
-    "charges": "155$",
-    "tax": "10%",
-    "discount": "5$",
-    "total": "160$"
-  },
-  {
-    "billNo": "131",
-    "billDate": "17 Feb 2019",
-    "patient": "Mayank Jani",
-    "doctor": "Christina Thomas",
-    "charges": "121$",
-    "tax": "10%",
-    "discount": "5$",
-    "total": "125$"
-  },
-  {
-    "billNo": "130",
-    "billDate": "17 Feb 2019",
-    "patient": "Jenish Shah",
-    "doctor": "Juan Freeman",
-    "charges": "70$",
-    "tax": "10%",
-    "discount": "5$",
-    "total": "75$"
-  },
-  {
-    "billNo": "129",
-    "billDate": "16 Feb 2019",
-    "patient": "Jayna Sharma",
-    "doctor": "Jessica Patterson",
-    "charges": "45$",
-    "tax": "10%",
-    "discount": "5$",
-    "total": "48$"
-  },
-  {
-    "billNo": "128",
-    "billDate": "15 Feb 2019",
-    "patient": "Sonali Malik",
-    "doctor": "Lori Perkins",
-    "charges": "120$",
-    "tax": "10%",
-    "discount": "5$",
-    "total": "124$"
-  },
-  {
-    "billNo": "133",
-    "billDate": "13 Feb 2019",
-    "patient": "Mayank Jani",
-    "doctor": "Jessica Patterson",
-    "charges": "25$",
-    "tax": "10%",
-    "discount": "5$",
-    "total": "27$"
-  },
-  {
-    "billNo": "134",
-    "billDate": "13 Feb 2019",
-    "patient": "Pooja Patel",
-    "doctor": "Juan Freeman",
-    "charges": "320$",
-    "tax": "10%",
-    "discount": "5$",
-    "total": "340$"
-  }
+[{
+        "billNo": "132",
+        "billDate": "18 Feb 2020",
+        "patient": "Mariem Saied",
+        "doctor": "Ramy Adel",
+        "charges": "155$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "160$"
+    },
+    {
+        "billNo": "131",
+        "billDate": "17 Feb 2019",
+        "patient": "Saad Ayman",
+        "doctor": "Nouran Esam",
+        "charges": "121$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "125$"
+    },
+    {
+        "billNo": "123",
+        "billDate": "8 Feb 2019",
+        "patient": "Hala Karim",
+        "doctor": "Nancy Salah",
+        "charges": "100$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "110$"
+    },
+    {
+        "billNo": "122",
+        "billDate": "8 Feb 2019",
+        "patient": "George Saad",
+        "doctor": "Ramy Reda",
+        "charges": "50$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "55$"
+    },
+    {
+        "billNo": "121",
+        "billDate": "8 Feb 2019",
+        "patient": "Megha Trivedi",
+        "doctor": "Mahmoud Hany",
+        "charges": "30$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "30$"
+    },
+    {
+        "billNo": "120",
+        "billDate": "6 Feb 2019",
+        "patient": "Karim Fahmy",
+        "doctor": "Khaled Islam",
+        "charges": "42$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "46$"
+    },
+    {
+        "billNo": "119",
+        "billDate": "5 Feb 2019",
+        "patient": "Hania karim",
+        "doctor": "Nancy Saleh",
+        "charges": "17$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "20$"
+    },
+    {
+        "billNo": "118",
+        "billDate": "5 Feb 2019",
+        "patient": "Ibrahim Reda",
+        "doctor": "Ali Ibrahim",
+        "charges": "26$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "29$"
+    },
+    {
+        "billNo": "117",
+        "billDate": "4 Feb 2019",
+        "patient": "Karam Walid",
+        "doctor": "Esraa Ayman",
+        "charges": "26$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "30$"
+    },
+    {
+        "billNo": "116",
+        "billDate": "3 Feb 2019",
+        "patient": "Hany Akram",
+        "doctor": "Ali Ibrahim",
+        "charges": "132$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "136$"
+    },
+    {
+        "billNo": "115",
+        "billDate": "2 Feb 2019",
+        "patient": "Islam Samir",
+        "doctor": "Noah Fawzy",
+        "charges": "70$",
+        "tax": "10%",
+        "discount": "5$",
+        "total": "77$"
+    }
 ]

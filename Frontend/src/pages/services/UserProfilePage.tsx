@@ -23,7 +23,7 @@ const pageData: IPageData = {
 
 const UserPreview = () => {
   const userCover = `${window.origin}/content/user-profile.jpg`;
-  const userAvatar = `${window.origin}/content/user-400-1.jpg`;
+  const userAvatar = `${window.origin}/content/male.png`;
 
   return (
     <Card
@@ -49,7 +49,7 @@ const UserPreview = () => {
       </div>
 
       <div className='d-flex align-items-center justify-content-between'>
-        <h5 className='mb-0 mt-0 mr-1'>Liam Jouns</h5>
+        <h5 className='mb-0 mt-0 mr-1'>Test User</h5>
 
         <Rate value={4} />
       </div>
@@ -75,7 +75,7 @@ const Socials = () => {
         <div className='col'>
           <div>Github</div>
           <a href='#' onClick={(e) => e.preventDefault()}>
-            github.com/liam-jouns
+            github.com/test
           </a>
         </div>
       </div>
@@ -87,7 +87,7 @@ const Socials = () => {
         <div className='col'>
           <div>Twitter</div>
           <a href='#' onClick={(e) => e.preventDefault()}>
-            twitter.com/liam-jouns
+            twitter.com/test
           </a>
         </div>
       </div>
@@ -99,7 +99,7 @@ const Socials = () => {
         <div className='col'>
           <div>LinkedIn</div>
           <a href='#' onClick={(e) => e.preventDefault()}>
-            linkedin.com/liam-jouns
+            linkedin.com/test
           </a>
         </div>
       </div>
@@ -138,7 +138,7 @@ const ContactInfo = () => {
         </div>
         <div className='col'>
           <div>Slack</div>
-          @liam.joun
+          @test
         </div>
       </div>
 
@@ -148,7 +148,7 @@ const ContactInfo = () => {
         </div>
         <div className='col'>
           <div>Skype</div>
-          liam0jouns
+          test
         </div>
       </div>
 

@@ -7,24 +7,24 @@ const columns: any = [
     dataIndex: 'name',
     filters: [
       {
-        text: 'Joe',
-        value: 'Joe'
+        text: 'Ali',
+        value: 'Alaa'
       },
       {
-        text: 'Jim',
-        value: 'Jim'
+        text: 'Alaa',
+        value: 'Alaa'
       },
       {
         text: 'Submenu',
         value: 'Submenu',
         children: [
           {
-            text: 'Green',
-            value: 'Green'
+            text: 'Hashem',
+            value: 'Hashem'
           },
           {
-            text: 'Black',
-            value: 'Black'
+            text: 'Saad',
+            value: 'Saad'
           }
         ]
       }
@@ -64,25 +64,25 @@ const columns: any = [
 const data = [
   {
     key: '1',
-    name: 'John Brown',
+    name: 'Ali Hashem',
     age: 32,
     address: 'New York No. 1 Lake Park'
   },
   {
     key: '2',
-    name: 'Jim Green',
+    name: 'Alaa Saad',
     age: 42,
     address: 'London No. 1 Lake Park'
   },
   {
     key: '3',
-    name: 'Joe Black',
+    name: 'Hany Atta',
     age: 32,
     address: 'Sidney No. 1 Lake Park'
   },
   {
     key: '4',
-    name: 'Jim Red',
+    name: 'Karim Fawzy',
     age: 32,
     address: 'London No. 2 Lake Park'
   }
