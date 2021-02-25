@@ -40,16 +40,16 @@ export class HomePage {
   render() {
     return (
       <div class="container">
-        <p> Choose a department: </p>
-        <select onChange={e => this.handleChange(e)}>
-          <option value="" disabled selected>
-            Select your option
-          </option>
-          <option>All</option>
-          {this.departments?.map(d => (
-            <option>{d}</option>
-          ))}
-        </select>
+        <div class="select-container">
+          <p>Select a department: </p>
+          <select onChange={e => this.handleChange(e)}>
+            <option value="" disabled selected></option>
+            <option>All</option>
+            {this.departments?.map(d => (
+              <option>{d}</option>
+            ))}
+          </select>
+        </div>
         <div class="cardContainer">
           {this.doctors?.map(doc => (
             <div class="drCard">
