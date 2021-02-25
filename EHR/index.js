@@ -5,9 +5,11 @@ import bodyParser from "body-parser";
 import EHRrouter from "./routes/EHR";
 import clinicsRouter from "./routes/clinics";
 import doctorsRouter from "./routes/doctors";
+import cors from "cors";
 global.dev_ENV = process.env.NODE_ENV !== "production";
 
 var app = express();
+app.use(cors());
 app.use(xss());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

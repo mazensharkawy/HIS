@@ -30,12 +30,22 @@ export const read = async (table, query) => {
 /**
  * return value => Promise
  */
-export const insert = (table, data) => {
+export const insert = async (table, data) => {
   return new Promise(async (resolve, reject) => {
     if (!db) await createConnection();
     db.collection(table).insertOne(data, (err, res) => {
       if (err) reject("error occured durin insertion");
       resolve("object inserted");
+    });
+  });
+};
+
+export const getDistinctValues = (table, field) => {
+  return new Promise(async (resolve, reject) => {
+    if (!db) await createConnection();
+    db.collection(table).distinct(field, (err, arr) => {
+      if (err) reject(err);
+      else resolve(arr);
     });
   });
 };
