@@ -11,20 +11,21 @@
 .cardContainer {
   width: 100%;
   margin-top: 20px;
-
   display: flex;
   flex-wrap: wrap;
+}
+.drCard {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
 
-  div {
-    width: 16vw;
-    height: 22vw;
-    display: flex;
-    flex-direction: column;
-    margin: 10px auto;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    line-height: 1.3em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 15px 5px;
+  p {
+    margin: 3px auto;
+    padding-bottom: 5px;
   }
   img {
     border-radius: 10px;
@@ -32,8 +33,33 @@
     display: block;
     margin: auto;
   }
-  div:hover {
+  &:hover {
     box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.3);
     transform: scale(1.05);
   }
+}
+.status-container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  margin-top: 3px;
+  div {
+    margin-left: 50px;
+  }
+}
+.active {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: green;
+}
+.not-active {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: orange;
+}
+.time {
+  color: green;
+  font-weight: bold;
 }
