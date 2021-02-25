@@ -3,11 +3,10 @@ import Router from "express";
 import Database from "../db/EHRdb";
 import { verifyTokenMiddleware } from "../middlewares/token";
 
-
 const router = Router();
 let tableName = "EHR";
 
-const getAllEHR = async (req, res) => {
+const getEHR = async (req, res) => {
   //get _id from sql and sub in query
   let query = {};
   let EHR = await Database.read({
@@ -38,7 +37,6 @@ const getEHRByPhone = async (req, res) => {
   });
   res.status(200).send(EHR);
 };
-
 const addRecipient = async (req, res) => {
   let {
     NathionalID,
@@ -75,7 +73,7 @@ const addRecipient = async (req, res) => {
   else res.status(400).send({ inserted: false });
 };
 
-router.get("/getallEHR", getAllEHR);
+router.get("/", getEHR);
 router.post("/getEHRbyid", getEHRByID);
 router.post("/getEHRbyphone", getEHRByPhone);
 
