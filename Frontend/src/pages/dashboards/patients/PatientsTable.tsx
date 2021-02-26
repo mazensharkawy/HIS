@@ -44,7 +44,6 @@ const PatientsTable = ({
     setPatient(patient);
     setVisibility(true);
   };
-
   const actions = (patient: IPatient) => (
     <div className='buttons-list nowrap'>
       <Button shape='circle' onClick={handleShowInfo}>
@@ -60,22 +59,25 @@ const PatientsTable = ({
   );
 
   const columns: ColumnProps<IPatient>[] = [
+    // {
+    //   title: 'Photo',
+    //   dataIndex: 'img',
+    //   render: (img) => <PatientImg img={img} />
+    // },
     {
-      key: 'img',
-      title: 'Photo',
-      dataIndex: 'img',
-      render: (img) => <PatientImg img={img} />
-    },
-    {
-      key: 'name',
-      dataIndex: 'name',
-      title: 'Name',
+      dataIndex: 'FirstName',
+      title: 'First Name',
       sorter: (a, b) => (a.name > b.name ? 1 : -1),
       render: (name) => <strong>{name}</strong>
     },
     {
-      key: 'id',
-      dataIndex: 'id',
+      dataIndex: 'LastName',
+      title: 'Last Name',
+      sorter: (a, b) => (a.name > b.name ? 1 : -1),
+      render: (name) => <strong>{name}</strong>
+    },
+    {
+      dataIndex: 'NathionalID',
       title: 'ID',
       sorter: (a, b) => (a.id > b.id ? 1 : -1),
       render: (id) => (
@@ -85,53 +87,29 @@ const PatientsTable = ({
       )
     },
     {
-      key: 'age',
-      dataIndex: 'age',
-      title: 'Age',
+      dataIndex: 'DOB',
+      title: 'DOB',
       sorter: (a, b) => a.age - b.age,
-      render: (age) => (
+      render: (DOB) => (
         <span className='nowrap' style={{ color: '#a5a5a5' }}>
-          {age}
+          {DOB.split('T')[0]}
         </span>
       )
     },
     {
-      key: 'address',
-      dataIndex: 'address',
+      dataIndex: 'Address',
       title: 'Address',
-      render: (address) => <span style={{ minWidth: 200, display: 'block' }}>{address}</span>
+      render: (Address) => <span style={{ minWidth: 200, display: 'block' }}>{Address}</span>
     },
     {
-      key: 'number',
-      dataIndex: 'number',
+      dataIndex: 'Phone',
       title: 'Number',
-      render: (phone) => (
+      render: (Number) => (
         <span className='d-flex align-baseline nowrap' style={{ color: '#336cfb' }}>
           <span className='icofont icofont-ui-cell-phone mr-1' style={{ fontSize: 16 }} />
-          {phone}
+          {Number}
         </span>
       )
-    },
-    {
-      key: 'visit',
-      dataIndex: 'lastVisit',
-      title: 'Last visit',
-      render: (visit) => (
-        <span className='nowrap' style={{ color: '#a5a5a5' }}>
-          {visit}
-        </span>
-      )
-    },
-    {
-      key: 'status',
-      dataIndex: 'status',
-      title: 'Status',
-      render: (status) => (
-        <Tag style={{ borderRadius: 20 }} color={status === 'Approved' ? '#b7ce63' : '#cec759'}>
-          {status}
-        </Tag>
-      ),
-      sorter: (a, b) => (a.status > b.status ? 1 : -1)
     },
     {
       key: 'actions',
@@ -140,32 +118,34 @@ const PatientsTable = ({
     }
   ];
 
-  const pagination = patients.length <= 10 ? false : {};
+  const pagination = patients?.length <= 10 ? false : {};
 
   return (
-    <>
-      <Table
-        pagination={pagination}
-        className='accent-header'
-        rowKey='id'
-        dataSource={patients}
-        columns={columns}
-      />
-
-      <Modal
-        visible={visibility}
-        footer={null}
-        onCancel={closeModal}
-        title={<h3 className='title'>Add patient</h3>}
-      >
-        <PatientForm
-          submitText='Update patient'
-          onCancel={closeModal}
-          onSubmit={onEditPatient}
-          patient={patient}
+    patients && (
+      <>
+        <Table
+          pagination={pagination}
+          className='accent-header'
+          rowKey='id'
+          dataSource={patients}
+          columns={columns}
         />
-      </Modal>
-    </>
+
+        <Modal
+          visible={visibility}
+          footer={null}
+          onCancel={closeModal}
+          title={<h3 className='title'>Add patient</h3>}
+        >
+          <PatientForm
+            submitText='Update patient'
+            onCancel={closeModal}
+            onSubmit={onEditPatient}
+            patient={patient}
+          />
+        </Modal>
+      </>
+    )
   );
 };
 

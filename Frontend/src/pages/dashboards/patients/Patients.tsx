@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { usePageData } from '../../../hooks/usePage';
+import { useFetchPageData, usePageData } from '../../../hooks/usePage';
 import { usePatients } from '../../../hooks/usePatients';
 
 import PatientsTable from './PatientsTable';
 
 import { IPageData } from '../../../interfaces/page';
+import { unNestObject } from '../../../utils/utilis';
 
 const pageData: IPageData = {
   title: 'Patients',
@@ -23,15 +24,22 @@ const pageData: IPageData = {
 
 const PatientsPage = () => {
   const { patients, editPatient, deletePatient } = usePatients();
+
+  let url: string = 'http://localhost:3001/EHR';
+  const [fetchPatients]: any = useFetchPageData(url);
+  let unNestedPatients: any = unNestObject(fetchPatients);
+
   usePageData(pageData);
 
   return (
     <>
-      <PatientsTable
-        onDeletePatient={deletePatient}
-        onEditPatient={editPatient}
-        patients={patients}
-      />
+      {unNestedPatients && (
+        <PatientsTable
+          onDeletePatient={deletePatient}
+          onEditPatient={editPatient}
+          patients={unNestedPatients}
+        />
+      )}
     </>
   );
 };
