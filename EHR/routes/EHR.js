@@ -8,7 +8,7 @@ let tableName = "EHR";
 
 const getEHR = async (req, res) => {
   //get _id from sql and sub in query
-  let query = {};
+  let query = req.query || {};
   let EHR = await Database.read({
     tableName,
     query,
