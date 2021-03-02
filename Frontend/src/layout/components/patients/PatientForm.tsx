@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Button, Select, Input } from 'antd';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import ImageLoader from './ImageLoader';
+// import ImageLoader from './ImageLoader';
 import { hasErrorFactory } from '../../../utils/hasError';
 
 import { IPatient } from '../../../interfaces/patient';
@@ -13,29 +13,33 @@ const { TextArea } = Input;
 type Props = {
   onSubmit: (patient: IPatient) => void;
   onCancel: () => void;
-  patient?: IPatient;
+  patient?: any;
   submitText?: string;
 };
 
 const defaultSubmitText = 'Add patient';
 const emptyPatient = {
-  name: null,
-  address: null,
-  status: null,
-  age: null,
-  number: null,
-  gender: null,
-  img: null
+  NationalID: null,
+  FirstName: null,
+  LastName: null,
+  Title: null,
+  Address: null,
+  Phone: null,
+  DOB: null,
+  Sex: null,
+  EmergencyContact: null
 };
 
 const patientScheme = Yup.object({
-  name: Yup.string().required(),
-  address: Yup.string().required(),
-  status: Yup.string().required(),
-  age: Yup.string().required(),
-  number: Yup.string().required(),
-  gender: Yup.string().required(),
-  img: Yup.string().required()
+  NationalID: Yup.string().required(),
+  FirstName: Yup.string().required(),
+  LastName: Yup.string().required(),
+  Title: Yup.string().required(),
+  Address: Yup.string().required(),
+  DOB: Yup.date().required(),
+  Phone: Yup.string().required(),
+  Sex: Yup.string().required()
+  // EmergencyContact: Yup.string().required()
 });
 
 const PatientForm = ({
@@ -48,13 +52,9 @@ const PatientForm = ({
     setFieldTouched,
     setFieldValue,
     handleChange,
-    handleSubmit,
-    setValues,
     handleBlur,
     resetForm,
-    touched,
     values,
-    errors,
     isValid
   } = useFormik<IPatient>({
     validationSchema: patientScheme,
@@ -64,114 +64,144 @@ const PatientForm = ({
       onCancel();
     }
   });
-
-  const handleGenderSelect = (value) => setFieldValue('gender', value);
-  const handleStatusSelect = (value) => setFieldValue('status', value);
-
-  const hasError = hasErrorFactory(touched, errors);
-
-  const handleCancel = () => {
-    resetForm();
-    onCancel();
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    let fd: any = new FormData(e.target);
+    onSubmit(fd);
   };
 
-  const handleImageLoad = (img) => {
-    setValues({ ...values, img });
+  const selectStyle: Object = {
+    height: '40px',
+    backgroundColor: '#ebebeb',
+    boxShadow: 'none',
+    border: '#ebebeb 1px solid',
+    borderRadius: '20px',
+    display: 'flex',
+    flex: '1 1',
+    color: '#1f2022',
+    lineHeight: '1.42857',
+    transition:
+      'background 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out',
+    willChange: 'background, border, box-shadow, color',
+    width: '100%',
+    padding: '0 !important',
+    appearance: 'none'
   };
-
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div className='form-group'>
-          <ImageLoader onLoad={handleImageLoad} src={values.img as string} />
-        </div>
-
+      <form id='form' onSubmit={handleSubmit}>
         <div className='form-group'>
           <Input
-            placeholder='Name'
-            name='name'
+            placeholder='SSN'
+            name='NationalID'
             type='text'
             onBlur={handleBlur}
             onChange={handleChange}
             defaultValue={values.name}
-            className={hasError('name')}
           />
+        </div>
+        <div className='form-group'>
+          <Input
+            placeholder='First Name'
+            name='FirstName'
+            type='text'
+            onBlur={handleBlur}
+            onChange={handleChange}
+            defaultValue={values.name}
+            // className={hasError('name')}
+          />
+        </div>
+        <div className='row'>
+          <div className='col-sm-6 col-12'>
+            <div className='form-group'>
+              <Input
+                placeholder='Last Name'
+                name='LastName'
+                type='text'
+                onBlur={handleBlur}
+                onChange={handleChange}
+                defaultValue={values.name}
+                // className={hasError('name')}
+              />
+            </div>
+          </div>
+          <div className='col-sm-6 col-12'>
+            <div className='form-group'>
+              <Input
+                placeholder='Title'
+                name='Title'
+                type='text'
+                onBlur={handleBlur}
+                onChange={handleChange}
+                defaultValue={values.name}
+                // className={hasError('Title')}
+              />
+            </div>
+          </div>
         </div>
 
         <div className='form-group'>
           <Input
             placeholder='Phone'
-            name='number'
+            name='Phone'
             type='phone'
             onBlur={handleBlur}
             onChange={handleChange}
             defaultValue={values.number}
-            className={hasError('number')}
+            // className={hasError('number')}
           />
         </div>
 
         <div className='row'>
           <div className='col-sm-6 col-12'>
             <div className='form-group'>
+              Date of Birth:
               <Input
-                name='age'
-                type='number'
-                placeholder='Age'
+                name='DOB'
+                type='Date'
                 onBlur={handleBlur}
                 onChange={handleChange}
                 defaultValue={values.age}
-                className={hasError('age')}
+                // className={hasError('age')}
               />
             </div>
           </div>
 
           <div className='col-sm-6 col-12'>
             <div className='form-group'>
-              <Select
-                placeholder='Gender'
+              <p></p>
+              <select
+                placeholder='Sex'
                 defaultValue={values.gender}
-                onChange={handleGenderSelect}
-                className={hasError('gender')}
-                onBlur={() => setFieldTouched('gender')}
+                name='Sex'
+                style={selectStyle}
+                required
               >
-                <Select.Option value='Male'>Male</Select.Option>
-                <Select.Option value='Female'>Female</Select.Option>
-              </Select>
+                <option></option>
+                <option value='Male'>Male</option>
+                <option value='Female'>Female</option>
+              </select>
             </div>
           </div>
         </div>
 
         <div className='form-group'>
-          <Select
-            placeholder='Status'
-            defaultValue={values.status}
-            onChange={handleStatusSelect}
-            className={hasError('status')}
-            onBlur={() => setFieldTouched('status')}
-          >
-            <Select.Option value='Approved'>Approved</Select.Option>
-            <Select.Option value='Pending'>Pending</Select.Option>
-          </Select>
-        </div>
-
-        <div className='form-group'>
           <TextArea
             rows={3}
-            name='address'
+            name='Address'
             placeholder='Address'
             onBlur={handleBlur}
             onChange={handleChange}
             defaultValue={values.address}
-            className={hasError('address')}
           />
         </div>
 
         <div className='d-flex justify-content-between buttons-list settings-actions'>
-          <Button danger onClick={handleCancel}>
+          {/* <Button danger onClick={onClose}>
             Cancel
-          </Button>
+          </Button> */}
 
-          <Button disabled={!isValid} type='primary' htmlType='submit'>
+          <Button type='primary' htmlType='submit'>
             {submitText}
           </Button>
         </div>

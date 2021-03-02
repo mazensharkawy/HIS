@@ -15,7 +15,7 @@ const AddPatient = () => {
 
   const closeModal = () => setVisible(false);
 
-  const handleAddPatient = (patient: IPatient) => {
+  const handleAddPatient = (patient: any) => {
     addPatient(patient);
     closeModal();
   };

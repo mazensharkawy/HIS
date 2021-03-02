@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../redux/patients/actions';
 
 import { IAppState } from '../interfaces/app-state';
+import axios from 'axios';
 
 export function usePatients() {
   const dispatch = useDispatch();
@@ -13,8 +14,17 @@ export function usePatients() {
     return dispatch(actions.editPatient(patient));
   };
 
-  const addPatient = (patient: IPatient) => {
-    return dispatch(actions.addPatient(patient));
+  const addPatient = async (patient: any) => {
+    // return dispatch(actions.addPatient(patient));
+    try {
+      var patientObject: object = {};
+      await patient.forEach(function (value, key) {
+        patientObject[key] = value;
+      });
+      return axios.post('http://localhost:3001/EHR/', patientObject);
+    } catch (error) {
+      alert(error);
+    }
   };
 
   const deletePatient = (id: string) => {
