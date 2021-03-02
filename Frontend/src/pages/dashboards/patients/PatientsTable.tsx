@@ -59,11 +59,6 @@ const PatientsTable = ({
   );
 
   const columns: ColumnProps<IPatient>[] = [
-    // {
-    //   title: 'Photo',
-    //   dataIndex: 'img',
-    //   render: (img) => <PatientImg img={img} />
-    // },
     {
       dataIndex: 'FirstName',
       title: 'First Name',
