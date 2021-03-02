@@ -39,7 +39,7 @@ const getEHRByPhone = async (req, res) => {
 };
 const addRecipient = async (req, res) => {
   let {
-    NathionalID,
+    NationalID,
     FirstName,
     LastName,
     Title,
@@ -51,7 +51,7 @@ const addRecipient = async (req, res) => {
   } = req.body;
   let object = {
     Recipient: {
-      NathionalID,
+      NationalID,
       Name: {
         FirstName,
         LastName,
@@ -67,7 +67,6 @@ const addRecipient = async (req, res) => {
     },
     Encounter: [],
   };
-
   let writeStatus = await Database.write({ tableName, object });
   if (writeStatus.result.ok === 1) res.status(200).send({ inserted: true });
   else res.status(400).send({ inserted: false });
@@ -77,6 +76,6 @@ router.get("/", getEHR);
 router.post("/getEHRbyid", getEHRByID);
 router.post("/getEHRbyphone", getEHRByPhone);
 
-router.post("/addrecipient", addRecipient);
+router.post("/", addRecipient);
 
 export default router;
