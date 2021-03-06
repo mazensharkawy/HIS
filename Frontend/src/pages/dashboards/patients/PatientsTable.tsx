@@ -72,7 +72,7 @@ const PatientsTable = ({
       render: (name) => <strong>{name}</strong>
     },
     {
-      dataIndex: 'NathionalID',
+      dataIndex: 'NationalID',
       title: 'ID',
       sorter: (a, b) => (a.id > b.id ? 1 : -1),
       render: (id) => (

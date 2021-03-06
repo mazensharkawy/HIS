@@ -16,8 +16,11 @@ const AddPatient = () => {
   const closeModal = () => setVisible(false);
 
   const handleAddPatient = (patient: any) => {
-    addPatient(patient);
-    closeModal();
+    addPatient(patient)
+      .then((res) => {
+        closeModal();
+      })
+      .catch(() => alert('failed to add'));
   };
 
   return (

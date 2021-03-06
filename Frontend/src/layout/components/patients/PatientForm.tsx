@@ -177,7 +177,9 @@ const PatientForm = ({
                 style={selectStyle}
                 required
               >
-                <option></option>
+                <option defaultChecked={false} value=''>
+                  Select gender ....
+                </option>
                 <option value='Male'>Male</option>
                 <option value='Female'>Female</option>
               </select>
@@ -197,9 +199,9 @@ const PatientForm = ({
         </div>
 
         <div className='d-flex justify-content-between buttons-list settings-actions'>
-          {/* <Button danger onClick={onClose}>
+          <Button danger onClick={onCancel}>
             Cancel
-          </Button> */}
+          </Button>
 
           <Button type='primary' htmlType='submit'>
             {submitText}
