@@ -72,7 +72,6 @@ export class HomePage {
               )}
               <p>
                 From <span class="time"> {doc.startTime} </span> Till <span class="time"> {doc.endTime} </span>
-                {/* From <span class="time"> 9:30 AM</span> Till <span class="time"> 10:30 PM </span> */}
               </p>
             </div>
           ))}
