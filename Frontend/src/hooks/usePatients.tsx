@@ -27,8 +27,13 @@ export function usePatients() {
     }
   };
 
-  const deletePatient = (id: string) => {
-    return dispatch(actions.deletePatient(id));
+  const deletePatient = async (id: any) => {
+    // return dispatch(actions.deletePatient(id));
+    try {
+      return await axios.delete(`http://localhost:3001/EHR/${id}`);
+    } catch (err) {
+      alert(err);
+    }
   };
 
   return { patients, addPatient, editPatient, deletePatient };

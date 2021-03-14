@@ -52,7 +52,7 @@ const PatientsTable = ({
       <Button onClick={handleEditPatient.bind({}, patient)} shape='circle' type='primary'>
         <span className='icofont icofont-edit-alt' />
       </Button>
-      <Button onClick={handleDeletePatient.bind({}, patient.id)} shape='circle' danger>
+      <Button onClick={handleDeletePatient.bind({}, patient._id)} shape='circle' danger>
         <span className='icofont icofont-ui-delete' />
       </Button>
     </div>
