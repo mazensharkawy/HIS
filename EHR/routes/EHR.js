@@ -1,6 +1,6 @@
 import Router from "express";
 
-import Database from "../db/EHRdb";
+import Database, { AsyncDatabase } from "../db/EHRdb";
 import { verifyTokenMiddleware } from "../middlewares/token";
 
 const router = Router();
@@ -72,10 +72,37 @@ const addRecipient = async (req, res) => {
   else res.status(400).send({ inserted: false });
 };
 
+const updateEHR = async (req, res) => {
+  try {
+    let { _id } = req.user;
+    let update = req.body;
+    await AsyncDatabase.findOneAndUpdate({
+      collection: tableName,
+      query: { _id: _id },
+      update,
+    });
+    res.status(200).send({ updated: true });
+  } catch (error) {
+    res.status(400).send(error);
+  }
+};
+const deleteEHR = async (req, res) => {
+  try {
+    let { _id } = req.body;
+    await Database.delete(tableName, _id);
+    res.status(200).send({ deleted: true });
+  } catch (err) {
+    res.status(400).send({ deleted: false });
+  }
+};
+
 router.get("/", getEHR);
 router.post("/getEHRbyid", getEHRByID);
 router.post("/getEHRbyphone", getEHRByPhone);
+router.post("/getbyid", getEHRByID);
+router.post("/getbyphone", getEHRByPhone);
 
 router.post("/", addRecipient);
-
+router.put("/", updateEHR);
+router.delete("/", deleteEHR);
 export default router;

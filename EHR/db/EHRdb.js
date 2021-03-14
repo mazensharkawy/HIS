@@ -1,5 +1,5 @@
 import Promise from "bluebird";
-import { MongoClient } from "mongodb";
+import { MongoClient, ObjectID } from "mongodb";
 import config from "../config";
 
 let production = false; //process.env.NODE_ENV === 'production';
@@ -47,6 +47,15 @@ export default class Database {
     console.log("Object to write: " + object);
 
     return await db.collection(tableName).insertOne(object);
+  }
+  static async delete(tableName, id) {
+    if (!db) await this.openDb();
+    console.log("DB: " + db.dbName);
+    console.log("Object to delete: " + id);
+
+    return await db.collection(tableName).deleteOne({
+      _id: ObjectID(id),
+    });
   }
 }
 export class AsyncDatabase {
