@@ -88,8 +88,8 @@ const updateEHR = async (req, res) => {
 };
 const deleteEHR = async (req, res) => {
   try {
-    let { _id } = req.body;
-    await Database.delete(tableName, _id);
+    let { id } = req.params;
+    await Database.delete(tableName, id);
     res.status(200).send({ deleted: true });
   } catch (err) {
     res.status(400).send({ deleted: false });
@@ -104,5 +104,5 @@ router.post("/getbyphone", getEHRByPhone);
 
 router.post("/", addRecipient);
 router.put("/", updateEHR);
-router.delete("/", deleteEHR);
+router.delete("/:id", deleteEHR);
 export default router;
